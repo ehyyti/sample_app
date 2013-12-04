@@ -54,12 +54,14 @@ class UsersController < ApplicationController
 
   # Before filters
 
-  def signed_in_user
-    unless signed_in?
-      store_location
-      redirect_to signin_url, notice: "Please sign in."
-    end
-  end
+  # ehyyti: below Listing 10.24 >>>
+  #def signed_in_user
+  #  unless signed_in?
+  #    store_location
+  #    redirect_to signin_url, notice: "Please sign in."
+  #  end
+  #end
+  # ehyyti: below Listing 10.24 <<<
 
   def correct_user
     @user = User.find(params[:id])
